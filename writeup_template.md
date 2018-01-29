@@ -36,11 +36,11 @@ The code for this step is contained in the 4th and 5th code cells of the IPython
 
 I used `skimage.hog()` function with parameters `orientations=9`, `pixels_per_cell=(8, 8)`, `cells_per_block=(2, 2)`, and `transform_sqrt=False` to extract HOG features from images in `YCrCb` color space.
 
-Here is an example of HOG of a car vehicle:
+Here is an example of HOG (on channels Y, Cr, Cb) of a car vehicle:
 
 ![alt text][car_hog_vis]
 
-Here is an example of HOG of a non-car vehicle:
+Here is an example of HOG (on channels Y, Cr, Cb) of a non-car vehicle:
 
 ![alt text][non_car_hog_vis]
 
