@@ -10,7 +10,7 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[car_hog_vis]: ./writeup/car_hog_vis.png
+[car_hog_vis]: ./writeup/hog_vis.png
 [non_car_hog_vis]: ./writeup/non_car_hog_vis.png
 [heat_labels_maps]: ./writeup/heat_labels_maps.png
 [all_windows]: ./writeup/all_windows.png
@@ -83,7 +83,7 @@ Here's a [link to my video result](./project_video_output.mp4)
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
-I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected.  
+I recorded the positions of positive detections in each frame of the video. From the positive detections I created a heatmap and then thresholded (at least 2 positives) that map to identify vehicle positions. I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap. I then assumed each blob corresponded to a vehicle. I constructed bounding boxes to cover the area of each blob detected. Code is at cells 17, 18.
 
 Here's an example result showing the heatmap and labels map for a frame of the video:
 
